@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "in.ravikalla.pdfeditor",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "pdfEditor",
+    "packageName": "in.ravikalla.pdfeditor",
+    "packageFolder": "in/ravikalla/pdfeditor",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MTk3M2I1NzFlZDlmM2JiM2JiMmRjOTYwNzVmYTRlNGI2YjYyYWY3MDZmODY0NzdkYTI5NTBjYTFhMWM5ZGYyNjU3NzhjMTM5NTUxZWFiZjNkZGVhZTI5MTE3N2VmZTQ0ODk1ZDhhMzAwN2IwZDdmZjZmODVlOGRlNjIzYTQ5YjE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1587276673489,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "fr", "es", "te"],
+    "blueprints": []
+  }
+}

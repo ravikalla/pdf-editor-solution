@@ -1,0 +1,29 @@
+entity FileInfo1 {
+	file AnyBlob required,
+    notes String,
+    fileType FileType1,
+    uploaddate ZonedDateTime
+}
+
+enum FileType1 {
+    PDF, JPEG, GIF
+}
+
+entity Box1 {
+	alias String,
+	x1 Integer required min(0) max(10000),
+    y1 Integer required min(0) max(10000),
+	x2 Integer min(0) max(10000),
+    y2 Integer min(0) max(10000),
+	uploaddate ZonedDateTime
+}
+
+relationship OneToMany {
+	FileInfo1{box} to Box1
+}
+
+paginate FileInfo1, Box1 with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl
