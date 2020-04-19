@@ -15,6 +15,7 @@ entity Box {
     y1 Integer required min(0) max(10000),
 	x2 Integer min(0) max(10000),
     y2 Integer min(0) max(10000),
+    pageNumber Integer required,
 	uploaddate ZonedDateTime
 }
 
