@@ -1,15 +1,15 @@
-entity FileInfo1 {
+entity FileInfo {
 	file AnyBlob required,
     notes String,
-    fileType FileType1,
+    fileType FileType,
     uploaddate ZonedDateTime
 }
 
-enum FileType1 {
+enum FileType {
     PDF, JPEG, GIF
 }
 
-entity Box1 {
+entity Box {
 	alias String,
 	x1 Integer required min(0) max(10000),
     y1 Integer required min(0) max(10000),
@@ -19,10 +19,10 @@ entity Box1 {
 }
 
 relationship OneToMany {
-	FileInfo1{box} to Box1
+	FileInfo{box} to Box
 }
 
-paginate FileInfo1, Box1 with pagination
+paginate FileInfo, Box with pagination
 
 dto * with mapstruct
 
