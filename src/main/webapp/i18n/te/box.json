@@ -1,0 +1,29 @@
+{
+  "pdfEditorApp": {
+    "box": {
+      "home": {
+        "title": "Boxes",
+        "createLabel": "కొత్త Box  సృష్టించండి",
+        "createOrEditLabel": "Box సృష్టించండి లేదా సవరించండి",
+        "notFound": "No Boxes found"
+      },
+      "created": "{{ param }} ఐడీ తో ఒక కొత్త Box సృష్టించబడినది",
+      "updated": "{{ param }} ఐడీ తో ఒక కొత్త Box సవరించబడినది",
+      "deleted": "{{ param }} ఐడీ తో ఒక కొత్త Box తొలగించబడినది",
+      "delete": {
+        "question": "మీరు Box {{ id }} ఖచ్చితంగా తొలగించాలనుకుంటున్నారా?"
+      },
+      "detail": {
+        "title": "Box"
+      },
+      "alias": "Alias",
+      "x1": "X 1",
+      "y1": "Y 1",
+      "x2": "X 2",
+      "y2": "Y 2",
+      "pageNumber": "Page Number",
+      "uploaddate": "Uploaddate",
+      "fileInfo": "File Info"
+    }
+  }
+}

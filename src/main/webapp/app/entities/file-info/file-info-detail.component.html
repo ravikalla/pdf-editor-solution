@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fileInfo">
+            <h2><span jhiTranslate="pdfEditorApp.fileInfo.detail.title">File Info</span> {{ fileInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pdfEditorApp.fileInfo.file">File</span></dt>
+                <dd>
+                    <div *ngIf="fileInfo.file">
+                        <a (click)="openFile(fileInfo?.fileContentType!, fileInfo?.file)" jhiTranslate="entity.action.open">open</a>
+                        {{ fileInfo.fileContentType }}, {{ byteSize(fileInfo.file) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.fileInfo.notes">Notes</span></dt>
+                <dd>
+                    <span>{{ fileInfo.notes }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.fileInfo.fileType">File Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'pdfEditorApp.FileType.' + fileInfo.fileType }}">{{ fileInfo.fileType }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.fileInfo.uploaddate">Uploaddate</span></dt>
+                <dd>
+                    <span>{{ fileInfo.uploaddate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/file-info', fileInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

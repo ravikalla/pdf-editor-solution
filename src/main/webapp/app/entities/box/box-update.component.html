@@ -1,0 +1,151 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-box-heading" jhiTranslate="pdfEditorApp.box.home.createOrEditLabel">Create or edit a Box</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.alias" for="field_alias">Alias</label>
+                    <input type="text" class="form-control" name="alias" id="field_alias"
+                           formControlName="alias"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.x1" for="field_x1">X 1</label>
+                    <input type="number" class="form-control" name="x1" id="field_x1"
+                           formControlName="x1"/>
+                    <div *ngIf="editForm.get('x1')!.invalid && (editForm.get('x1')!.dirty || editForm.get('x1')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x1')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x1')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x1')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 10000 }">
+                            This field cannot be more than 10000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('x1')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.y1" for="field_y1">Y 1</label>
+                    <input type="number" class="form-control" name="y1" id="field_y1"
+                           formControlName="y1"/>
+                    <div *ngIf="editForm.get('y1')!.invalid && (editForm.get('y1')!.dirty || editForm.get('y1')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y1')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y1')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y1')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 10000 }">
+                            This field cannot be more than 10000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('y1')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.x2" for="field_x2">X 2</label>
+                    <input type="number" class="form-control" name="x2" id="field_x2"
+                           formControlName="x2"/>
+                    <div *ngIf="editForm.get('x2')!.invalid && (editForm.get('x2')!.dirty || editForm.get('x2')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x2')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('x2')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 10000 }">
+                            This field cannot be more than 10000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('x2')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.y2" for="field_y2">Y 2</label>
+                    <input type="number" class="form-control" name="y2" id="field_y2"
+                           formControlName="y2"/>
+                    <div *ngIf="editForm.get('y2')!.invalid && (editForm.get('y2')!.dirty || editForm.get('y2')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y2')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('y2')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 10000 }">
+                            This field cannot be more than 10000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('y2')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.pageNumber" for="field_pageNumber">Page Number</label>
+                    <input type="number" class="form-control" name="pageNumber" id="field_pageNumber"
+                           formControlName="pageNumber"/>
+                    <div *ngIf="editForm.get('pageNumber')!.invalid && (editForm.get('pageNumber')!.dirty || editForm.get('pageNumber')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pageNumber')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('pageNumber')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.uploaddate" for="field_uploaddate">Uploaddate</label>
+                    <div class="d-flex">
+                        <input id="field_uploaddate" type="datetime-local" class="form-control" name="uploaddate" formControlName="uploaddate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pdfEditorApp.box.fileInfo" for="field_fileInfo">File Info</label>
+                    <select class="form-control" id="field_fileInfo" name="fileInfo" formControlName="fileInfoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fileInfoOption.id" *ngFor="let fileInfoOption of fileinfos; trackBy: trackById">{{ fileInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

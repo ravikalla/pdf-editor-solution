@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="box">
+            <h2><span jhiTranslate="pdfEditorApp.box.detail.title">Box</span> {{ box.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pdfEditorApp.box.alias">Alias</span></dt>
+                <dd>
+                    <span>{{ box.alias }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.x1">X 1</span></dt>
+                <dd>
+                    <span>{{ box.x1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.y1">Y 1</span></dt>
+                <dd>
+                    <span>{{ box.y1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.x2">X 2</span></dt>
+                <dd>
+                    <span>{{ box.x2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.y2">Y 2</span></dt>
+                <dd>
+                    <span>{{ box.y2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.pageNumber">Page Number</span></dt>
+                <dd>
+                    <span>{{ box.pageNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.uploaddate">Uploaddate</span></dt>
+                <dd>
+                    <span>{{ box.uploaddate }}</span>
+                </dd>
+                <dt><span jhiTranslate="pdfEditorApp.box.fileInfo">File Info</span></dt>
+                <dd>
+                    <div *ngIf="box.fileInfoId">
+                        <a [routerLink]="['/file-info', box.fileInfoId, 'view']">{{ box.fileInfoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/box', box.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

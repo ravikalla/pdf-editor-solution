@@ -1,0 +1,29 @@
+{
+  "pdfEditorApp": {
+    "box": {
+      "home": {
+        "title": "Boxes",
+        "createLabel": "Create a new Box",
+        "createOrEditLabel": "Create or edit a Box",
+        "notFound": "No Boxes found"
+      },
+      "created": "A new Box is created with identifier {{ param }}",
+      "updated": "A Box is updated with identifier {{ param }}",
+      "deleted": "A Box is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Box {{ id }}?"
+      },
+      "detail": {
+        "title": "Box"
+      },
+      "alias": "Alias",
+      "x1": "X 1",
+      "y1": "Y 1",
+      "x2": "X 2",
+      "y2": "Y 2",
+      "pageNumber": "Page Number",
+      "uploaddate": "Uploaddate",
+      "fileInfo": "File Info"
+    }
+  }
+}

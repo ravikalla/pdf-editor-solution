@@ -1,0 +1,10 @@
+{
+  "pdfEditorApp": {
+    "FileType": {
+      "null": "",
+      "PDF": "PDF",
+      "JPEG": "JPEG",
+      "GIF": "GIF"
+    }
+  }
+}

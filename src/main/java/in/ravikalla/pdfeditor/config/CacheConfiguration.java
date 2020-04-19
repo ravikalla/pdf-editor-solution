@@ -45,6 +45,9 @@ public class CacheConfiguration {
             createCache(cm, in.ravikalla.pdfeditor.domain.User.class.getName());
             createCache(cm, in.ravikalla.pdfeditor.domain.Authority.class.getName());
             createCache(cm, in.ravikalla.pdfeditor.domain.User.class.getName() + ".authorities");
+            createCache(cm, in.ravikalla.pdfeditor.domain.FileInfo.class.getName());
+            createCache(cm, in.ravikalla.pdfeditor.domain.FileInfo.class.getName() + ".boxes");
+            createCache(cm, in.ravikalla.pdfeditor.domain.Box.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

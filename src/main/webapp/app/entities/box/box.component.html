@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pdfEditorApp.box.home.title">Boxes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-box" [routerLink]="['/box/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pdfEditorApp.box.home.createLabel">
+            Create a new Box
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="boxes?.length === 0">
+        <span jhiTranslate="pdfEditorApp.box.home.notFound">No boxes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="boxes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alias"><span jhiTranslate="pdfEditorApp.box.alias">Alias</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="x1"><span jhiTranslate="pdfEditorApp.box.x1">X 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="y1"><span jhiTranslate="pdfEditorApp.box.y1">Y 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="x2"><span jhiTranslate="pdfEditorApp.box.x2">X 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="y2"><span jhiTranslate="pdfEditorApp.box.y2">Y 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pageNumber"><span jhiTranslate="pdfEditorApp.box.pageNumber">Page Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uploaddate"><span jhiTranslate="pdfEditorApp.box.uploaddate">Uploaddate</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fileInfoId"><span jhiTranslate="pdfEditorApp.box.fileInfo">File Info</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let box of boxes ;trackBy: trackId">
+                    <td><a [routerLink]="['/box', box.id, 'view']">{{ box.id }}</a></td>
+                    <td>{{ box.alias }}</td>
+                    <td>{{ box.x1 }}</td>
+                    <td>{{ box.y1 }}</td>
+                    <td>{{ box.x2 }}</td>
+                    <td>{{ box.y2 }}</td>
+                    <td>{{ box.pageNumber }}</td>
+                    <td>{{ box.uploaddate | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="box.fileInfoId">
+                            <a [routerLink]="['/file-info', box.fileInfoId , 'view']" >{{ box.fileInfoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/box', box.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/box', box.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(box)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="boxes?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

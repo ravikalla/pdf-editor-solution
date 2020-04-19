@@ -1,0 +1,26 @@
+{
+  "pdfEditorApp": {
+    "fileInfo": {
+      "home": {
+        "title": "File Infos",
+        "createLabel": "Crear nuevo File Info",
+        "createOrEditLabel": "Crear o editar File Info",
+        "notFound": "Ningún File Infos encontrado"
+      },
+      "created": "Un nuevo File Info ha sido creado con el identificador {{ param }}",
+      "updated": "Un File Info ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un File Info ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar File Info {{ id }}?"
+      },
+      "detail": {
+        "title": "File Info"
+      },
+      "file": "File",
+      "notes": "Notes",
+      "fileType": "File Type",
+      "uploaddate": "Uploaddate",
+      "box": "Box"
+    }
+  }
+}
